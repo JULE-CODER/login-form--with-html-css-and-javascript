@@ -102,5 +102,20 @@ section a{
   left: 50%;
   color: #fff;
   -webkit-transform: transalate(-50%,-50%);
-  -ms-transform: translate()
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  cursor: pointer;;
+}
+
+.submit-btn:hover{
+background: #009;
+transform: scale(1.05,1);
+}
+
+.sign-up link{
+  text-align:center;
+  font-size:16px;
+  margin-top:21px;
+  color:black;
+  font-weight:600;
 }
