@@ -12,58 +12,58 @@ body{
   justify-content:center;
   align-items:center;
   min-height:100vh;
-  background: #d113d1;
+  background: hsl(300, 29%, 97%);
 }
 
 .login-box{
     display:flex;
-    justify-content:center;
+    justify-content:left;
     flex-direction:column;
-    width:500px;
-    height:580px;
+    width:440px;
+    height:480px;
     padding:50px;
 }
 
 .login-header{
-  text-align:center;
+  text-align:left;
   margin:30px 0 50px 0;
 }
 
 .login-header header{
-  color: #bbb;
+  color: #690ee0;
   font-size: 50px;
   font-weight: 600px;
 }
 
 .input-box .input-field{
-  width:120px;
-  height: 80px;
-  font-size: 19px;
+  width:250px;
+  height: 30px;
+  font-size: 16px;
   padding: 0 30px;
   margin-bottom: 17px;
   border-radius:50px;
   border:none;
-  box-shadow: 0px 5px 10px 1px royalblue;
+  box-shadow: 0px 5px 10px 1px rgb(224, 226, 233);
   outline:none;
   transition: .5s;
 }
 
 ::placeholder{
-  font-weight: 600;
-  color:aliceblue;
+  font-weight: 400;
+  color:rgb(9, 10, 10);
 }
 
 .input-field:focus{
   display:flex;
-  justify-content:space-between;
-  margin-bottom:40px;
+  justify-content:center;
+  margin-bottom:80px;
 }
 
 section{
   display:flex;
   align-items:center;
   font-size:16px;
-  color:aqua;
+  color:rgb(3, 3, 3);
 }
 
 #check{
@@ -71,11 +71,11 @@ section{
 }
 
 a{
-  text-decoration-style: wavy;
+  text-decoration-style:none;
 }
 
 a:hover{
-  text-decoration: underline;
+  text-decoration:none;
 }
 
 section a{
@@ -83,32 +83,29 @@ section a{
 }
 
 .input-submit{
-  position:relative;
+  position:center;
 }
 
 .submit-btn{
-  width:100px;
-  height: 60px;
-  background:#bbb;
+  width:250px;
+  height: 30px;
+  background:#0b0b0b;
   border:none;
-  border-radius: 30px;
+  border-radius: 12px;
   cursor:pointer;
   transition: .3s;
 }
 
 .input-submit label{
-  position:absolute;
-  top:45%;
+  position:center;
+  top:15%;
   left: 50%;
-  color: #fff;
-  -webkit-transform: transalate(-50%,-50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  color: #1d057d;
   cursor: pointer;;
 }
 
 .submit-btn:hover{
-background: #009;
+background: rgb(20, 20, 20);
 transform: scale(1.05,1);
 }
 
@@ -116,6 +113,6 @@ transform: scale(1.05,1);
   text-align:center;
   font-size:16px;
   margin-top:21px;
-  color:black;
-  font-weight:600;
+  color:rgb(93, 45, 247);
+  font: weight 4px;
 }
