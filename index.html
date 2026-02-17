@@ -1,39 +1,287 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF -8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="Viewport" content="width=device-width, initial-scale=1.0">
-    <Link rel="stylesheet" href="style.css">
-    <title>Login | PlugInTech</title>
-  </head>
-  <body>
-    <div class="login-box">
-      <div class="login-header">
-        <header>Login</header>
-      </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OMEGA — Consultancy & Visa Application Support</title>
+  <meta name="description" content="OMEGA provides consultancy and visa application support: document preparation, review, evidence organisation, and clear submission guidance." />
+  <meta name="theme-color" content="#1fc6ff" />
+  <style>
+    :root{
+      --bg:#050712; --panel:rgba(255,255,255,.06);
+      --line:rgba(255,255,255,.12);
+      --text:#e9f3ff; --muted:#a8c6e8;
+      --brand:#20c6ff; --brand2:#2a7bff;
+      --shadow: 0 18px 55px rgba(0,0,0,.55);
+      --radius: 22px;
+      --max: 1120px;
+      --pad: clamp(16px, 3vw, 28px);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial;
+      background: radial-gradient(1100px 700px at 20% -10%, rgba(32,198,255,.22), transparent 60%),
+                  radial-gradient(900px 600px at 95% 10%, rgba(42,123,255,.18), transparent 55%),
+                  linear-gradient(180deg, #050712 0%, #060a18 100%);
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 var(--pad);}
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(5,7,18,.55);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px var(--pad);
+      max-width:var(--max); margin:0 auto;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; font-weight:900; letter-spacing:.06em;
+    }
+    .brand img{width:38px; height:38px; border-radius:12px; box-shadow: 0 0 0 1px rgba(255,255,255,.12), 0 0 22px rgba(32,198,255,.25);}
+    nav{display:flex; gap:18px; color:var(--muted); font-size:14px; flex-wrap:wrap}
+    nav a:hover{color:var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 12px 16px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      white-space:nowrap;
+      cursor:pointer;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.22);}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(32,198,255,.95), rgba(42,123,255,.95));
+      border-color: rgba(32,198,255,.35);
+      color:#031018; font-weight:900;
+      box-shadow: 0 20px 40px rgba(32,198,255,.18);
+    }
+    .hero{
+      padding: clamp(22px, 5vw, 60px) 0 10px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: clamp(14px, 3vw, 28px);
+      align-items:center;
+    }
+    .pill{
+      display:inline-flex; gap:10px; align-items:center;
+      padding: 8px 12px; border-radius:999px;
+      background: rgba(32,198,255,.10);
+      border: 1px solid rgba(32,198,255,.22);
+      color: var(--muted); font-size:13px;
+    }
+    h1{margin:14px 0 10px; font-size: clamp(34px, 5vw, 54px); line-height:1.02; letter-spacing:-.02em;}
+    .lead{margin:0 0 18px; color:var(--muted); font-size: clamp(15px, 1.2vw + 10px, 19px); line-height:1.55; max-width:56ch;}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-photo{position:relative}
+    .hero-photo img{width:100%; height:auto; display:block;}
+    .hero-photo .tag{
+      position:absolute; left:16px; bottom:16px;
+      padding:10px 12px; border-radius:16px;
+      background: rgba(0,0,0,.38);
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(233,243,255,.9); font-size:12px;
+    }
 
-      <div class="input-box">
-        <input type="text" class="input-field" placeholder="Email" autocomplete="off" required>
-            </div>
-            <div class="input-box">
-              <input type="password" class="input-field" placeholder="password" autocomplete="off" required>
-            </div>
-            <div class="forgot">
-              <section>
-                <input type="checkbox" id="check">
-                <label for="check">Remember me</label>
-              </section>
-            <section>
-            <a href="#">Forgot Password</a>
-            </section>
-         </div>
-         <div class="input-submit">
-          <button class="submit-btn" id="submit"></button>
-          <label for="submit">Sign In</label>
-         </div>
-         <div class="sign-up-link">
-          <p>Dont have an Account? <a href="#">Sign In</a>/p>
-         </div>
-  </body>
-  </html>
+    section{padding: 26px 0 0;}
+    h2{margin:0 0 10px; font-size: clamp(22px, 2.2vw, 30px); letter-spacing:-.01em;}
+    p{margin:0; color:var(--muted); line-height:1.6}
+    .grid{display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 16px;}
+    .svc{padding:16px; border-radius: 18px; border:1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.03); overflow:hidden;}
+    .svc img{width:100%; height:auto; border-radius: 14px; display:block; border:1px solid rgba(255,255,255,.10);}
+    .svc h3{margin:12px 0 6px; font-size:16px}
+    .svc p{font-size:14px}
+    .steps{display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 16px;}
+    .step{padding:18px; border-radius:18px; border:1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.03);}
+    .step b{display:inline-flex; align-items:center; gap:10px;}
+    .num{width:26px; height:26px; border-radius:10px; display:grid; place-items:center; font-weight:900; color:#031018;
+      background: linear-gradient(135deg, rgba(32,198,255,.9), rgba(42,123,255,.9));}
+    .contact{margin: 22px 0 40px; padding:18px; display:grid; grid-template-columns: 1fr 1fr; gap:14px;}
+    label{font-size:12px; color:rgba(233,243,255,.80)}
+    input,textarea{width:100%; padding:12px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background: rgba(0,0,0,.22); color:var(--text); outline:none;}
+    textarea{min-height:110px; resize:vertical}
+    input:focus,textarea:focus{border-color: rgba(32,198,255,.45); box-shadow: 0 0 0 4px rgba(32,198,255,.12);}
+    .aside{padding:18px; border-radius:18px; border:1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.03);}
+    ul{margin:12px 0 0; padding:0; list-style:none; display:grid; gap:10px;}
+    li{color:var(--muted); font-size:14px}
+    footer{border-top:1px solid var(--line); padding:18px 0 26px; color:rgba(233,243,255,.70); font-size:13px;}
+    .foot{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;}
+
+    @media (max-width: 920px){
+      .hero{grid-template-columns: 1fr;}
+      .grid{grid-template-columns: 1fr;}
+      .steps{grid-template-columns: 1fr;}
+      .contact{grid-template-columns: 1fr;}
+      nav{display:none}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="#top" aria-label="OMEGA home">
+      <img src="omega-logo.png" alt="OMEGA logo" />
+      <span>OMEGA</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <a class="btn" href="#services">Packages</a>
+      <a class="btn primary" href="#contact">Book a Consultation</a>
+    </div>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+  <section class="hero">
+    <div>
+      <div class="pill">Consultancy & Visa Support • Documents • Evidence • Submission</div>
+      <h1>Clear guidance. Strong documents. Confident submission.</h1>
+      <p class="lead">
+        OMEGA supports individuals and families with visa applications and professional document preparation.
+        We help you organise evidence, write clear letters, and follow a structured checklist — so your application is complete and easy to review.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#contact">Book a Free Consultation</a>
+        <a class="btn" href="#services">Explore Services</a>
+      </div>
+      <p style="margin-top:14px; color:rgba(233,243,255,.78); font-size:13px;">
+        <b>Note:</b> We provide application support and document preparation. We are not a law firm and do not provide legal advice.
+      </p>
+    </div>
+
+    <div class="card hero-photo">
+      <img src="hero.jpg" alt="Travel and document themed hero image" />
+      <div class="tag">Visa-ready • Organised evidence • Professional letters</div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <p>Choose what you need — or book a quick call and we’ll recommend the best option for your case.</p>
+
+    <div class="grid">
+      <article class="svc">
+        <img src="service-visa.jpg" alt="Visa application support illustration" />
+        <h3>Visa Application Support</h3>
+        <p>Requirements checklist, timelines, guidance on what to submit, and final readiness review.</p>
+      </article>
+
+      <article class="svc">
+        <img src="service-docs.jpg" alt="Document preparation illustration" />
+        <h3>Document Preparation & Review</h3>
+        <p>Cover letters, sponsor/invitation letters, personal statements, and professional formatting.</p>
+      </article>
+
+      <article class="svc">
+        <img src="service-consult.jpg" alt="Consultation illustration" />
+        <h3>Consultation & Planning</h3>
+        <p>Personalised advice, risk checks, and a clear plan based on your destination and deadline.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="process">
+    <h2>How it works</h2>
+    <p>A simple, structured process to keep everything organised.</p>
+
+    <div class="steps">
+      <div class="step">
+        <b><span class="num">1</span>Consultation</b>
+        <p>You explain your situation, destination country, and deadline. We agree what documents you need.</p>
+      </div>
+      <div class="step">
+        <b><span class="num">2</span>Prepare & organise</b>
+        <p>We draft/review documents and help you organise evidence so it’s clear and consistent.</p>
+      </div>
+      <div class="step">
+        <b><span class="num">3</span>Submit confidently</b>
+        <p>You submit using the final checklist and guidance (form is a demo template).</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Send a message and we’ll get back to you. (This form is a template — connect it to email or a backend when you deploy.)</p>
+
+    <div class="card contact">
+      <form onsubmit="return demoSubmit(event)">
+        <div>
+          <label for="name">Full name</label>
+          <input id="name" name="name" placeholder="Your name" required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        </div>
+        <div>
+          <label for="topic">Service needed</label>
+          <input id="topic" name="topic" placeholder="Visa support, document review, sponsor letter..." required />
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us your destination country, deadline, and what help you need..." required></textarea>
+        </div>
+        <button class="btn primary" type="submit">Send Message</button>
+        <div id="formNote" style="color:rgba(233,243,255,.75);font-size:12px;"></div>
+      </form>
+
+      <aside class="aside">
+        <h3 style="margin:0 0 8px">OMEGA</h3>
+        <p style="margin:0; line-height:1.6;">Replace these with your real contact details when you deploy.</p>
+        <ul>
+          <li><b style="color:rgba(233,243,255,.88)">Email:</b> helloomega1@gmail.com.example</li>
+          <li><b style="color:rgba(233,243,255,.88)">Phone/WhatsApp:</b> +254799426257</li>
+          <li><b style="color:rgba(233,243,255,.88)">Location:</b> Nairobi, Kenya</li>
+          <li><b style="color:rgba(233,243,255,.88)">Hours:</b> Mon–Sat • 8:00–18:00</li>
+        </ul>
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="#top">Back to top</a>
+          <a class="btn" href="#services">Services</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot">
+      <div>© <span id="year"></span> OMEGA. All rights reserved.</div>
+      <div style="display:flex; gap:12px; color:rgba(233,243,255,.65);">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Demo-only submit handler (no backend)
+  function demoSubmit(e){
+    e.preventDefault();
+    document.getElementById('formNote').textContent =
+      "Thanks! This is a demo form. To make it send emails, connect it to a backend or a form service.";
+    return false;
+  }
+</script>
+</body>
+</html>
